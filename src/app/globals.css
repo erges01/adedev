@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0a0a0a;
+  --color-foreground: #ededed;
+  --color-accent: #3b82f6; /* Electric Blue */
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: color-mix(in srgb, var(--color-accent) 30%, transparent);
+  color: white;
+}
+
+/* Subtle noise texture */
+.bg-noise {
+  background-image: url('/noise.png');
+  background-repeat: repeat;
+  opacity: 0.03;
+  pointer-events: none;
+}
