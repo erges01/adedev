@@ -3,12 +3,19 @@
 
 import { motion } from "framer-motion";
 
-const beliefs = [
-  "Software should disappear.",
-  "The best UX is invisible.",
-  "AI should amplify creativity.",
-  "Good products reduce decisions.",
-  "Great infrastructure feels like magic."
+const nowItems = [
+  {
+    label: "Building",
+    value: "Creator tools with real-time systems and clean UX.",
+  },
+  {
+    label: "Focus",
+    value: "Backend infrastructure, deterministic state, and performance.",
+  },
+  {
+    label: "Open to",
+    value: "High‑leverage collaborations and product engineering roles.",
+  },
 ];
 
 export default function Philosophy() {
@@ -21,27 +28,29 @@ export default function Philosophy() {
         transition={{ duration: 0.6 }}
         className="mb-24"
       >
+        <span className="eyebrow font-mono mb-4">06 / Now</span>
         <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-white">
-          Things I Believe.
+          Now
         </h2>
+        <div className="title-underline" />
       </motion.div>
 
-      <div className="space-y-16 md:space-y-24">
-        {beliefs.map((belief, index) => (
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {nowItems.map((item, index) => (
           <motion.div
-            key={index}
+            key={item.label}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, delay: index * 0.1, ease: "easeOut" }}
-            className="flex flex-col md:flex-row md:items-baseline gap-4 md:gap-8 group"
+            className="glass-card rounded-2xl p-6 md:p-8"
           >
-            <span className="text-blue-500 font-mono text-lg md:text-xl font-medium shrink-0">
-              0{index + 1}
+            <span className="text-blue-400 font-mono text-xs tracking-widest uppercase">
+              {item.label}
             </span>
-            <h3 className="text-3xl md:text-5xl font-medium text-gray-400 group-hover:text-white transition-colors duration-500">
-              {belief}
-            </h3>
+            <p className="mt-4 text-xl text-gray-300 leading-relaxed">
+              {item.value}
+            </p>
           </motion.div>
         ))}
       </div>

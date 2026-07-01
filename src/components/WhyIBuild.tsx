@@ -12,19 +12,29 @@ export default function WhyIBuild() {
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-12">
-          Why I Build.
+        <span className="eyebrow font-mono mb-4">00 / Intent</span>
+        <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-2">
+          Intent
         </h2>
+        <div className="title-underline" />
 
-        <div className="space-y-8 text-xl md:text-2xl text-gray-400 font-medium leading-relaxed max-w-3xl">
+        <div className="space-y-8 text-xl text-gray-400 font-medium leading-relaxed max-w-3xl">
           <p>
-            I left my first university at 18 because I didn't just want to memorize how systems worked—I wanted to architect them from the ground up. 
+            I build software that feels inevitable—clean interfaces, clear
+            systems, and zero wasted motion for the user.
           </p>
           <p>
-            Now, my obsession lies in the invisible layers of software. I build infrastructure that makes complex things feel simple. Whether that's engineering a financial ledger in Rust, writing a type-safe ORM, or building Redner so video editing feels as seamless as writing text.
+            My focus is backend engineering and infrastructure, where design
+            decisions compound. I care about performance, correctness, and
+            system clarity from day one.
           </p>
           <p>
-            I don't just write code. I look for bottlenecks, design the architecture, and ship products that reduce decisions for the user.
+            Whether it’s creator tooling, a financial ledger engine, or a custom
+            ORM, I optimize for long‑term maintainability and speed.
+          </p>
+          <p>
+            I don’t build to ship code. I build to remove friction and unlock
+            leverage.
           </p>
         </div>
       </motion.div>
@@ -35,7 +45,7 @@ export default function WhyIBuild() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-        className="mt-32 grid grid-cols-2 md:grid-cols-4 gap-12"
+        className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-12 pt-12 border-t border-white/5"
       >
         <div className="space-y-4">
           <h3 className="text-white font-semibold tracking-wide">Frontend</h3>
@@ -45,7 +55,7 @@ export default function WhyIBuild() {
             <li>TypeScript</li>
           </ul>
         </div>
-        
+
         <div className="space-y-4">
           <h3 className="text-white font-semibold tracking-wide">Backend</h3>
           <ul className="space-y-2 text-gray-500">
@@ -56,7 +66,9 @@ export default function WhyIBuild() {
         </div>
 
         <div className="space-y-4">
-          <h3 className="text-white font-semibold tracking-wide">Infrastructure</h3>
+          <h3 className="text-white font-semibold tracking-wide">
+            Infrastructure
+          </h3>
           <ul className="space-y-2 text-gray-500">
             <li>Docker</li>
             <li>Postgres</li>

@@ -1,26 +1,200 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #0a0a0a;
-  --color-foreground: #ededed;
-  --color-accent: #3b82f6; /* Electric Blue */
+    --color-background: #0a0a0a;
+    --color-foreground: #ededed;
+    --color-accent: #3b82f6; /* Electric Blue */
 }
 
 body {
-  background-color: var(--color-background);
-  color: var(--color-foreground);
-  -webkit-font-smoothing: antialiased;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
-  background-color: color-mix(in srgb, var(--color-accent) 30%, transparent);
-  color: white;
+    background-color: color-mix(in srgb, var(--color-accent) 30%, transparent);
+    color: white;
 }
 
 /* Subtle noise texture */
 .bg-noise {
-  background-image: url('/noise.png');
-  background-repeat: repeat;
-  opacity: 0.03;
-  pointer-events: none;
+    background-image: url("/noise.svg");
+    background-repeat: repeat;
+    opacity: 0.03;
+    pointer-events: none;
+}
+
+/* Ambient grid overlay */
+.bg-grid {
+    background-image:
+        linear-gradient(
+            to right,
+            rgba(255, 255, 255, 0.04) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.04) 1px,
+            transparent 1px
+        );
+    background-size: 48px 48px;
+    opacity: 0.25;
+    mask-image: radial-gradient(
+        circle at 50% 0%,
+        rgba(0, 0, 0, 0.9) 0%,
+        transparent 70%
+    );
+    -webkit-mask-image: radial-gradient(
+        circle at 50% 0%,
+        rgba(0, 0, 0, 0.9) 0%,
+        transparent 70%
+    );
+}
+
+/* Section shells for depth */
+.section-shell {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    background:
+        radial-gradient(
+            900px 500px at 15% -10%,
+            rgba(59, 130, 246, 0.1),
+            transparent 60%
+        ),
+        radial-gradient(
+            900px 500px at 85% -10%,
+            rgba(59, 130, 246, 0.06),
+            transparent 60%
+        );
+}
+
+.section-shell-alt {
+    background:
+        radial-gradient(
+            900px 500px at 85% -10%,
+            rgba(59, 130, 246, 0.1),
+            transparent 60%
+        ),
+        radial-gradient(
+            900px 500px at 15% -10%,
+            rgba(59, 130, 246, 0.06),
+            transparent 60%
+        );
+}
+
+.section-shell::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(
+            to right,
+            rgba(59, 130, 246, 0.06) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            to bottom,
+            rgba(59, 130, 246, 0.06) 1px,
+            transparent 1px
+        );
+    background-size: 64px 64px;
+    opacity: 0.15;
+    mask-image: radial-gradient(
+        circle at 50% 0%,
+        rgba(0, 0, 0, 0.7) 0%,
+        transparent 70%
+    );
+    -webkit-mask-image: radial-gradient(
+        circle at 50% 0%,
+        rgba(0, 0, 0, 0.7) 0%,
+        transparent 70%
+    );
+    pointer-events: none;
+    z-index: 0;
+}
+
+.section-content {
+    position: relative;
+    z-index: 1;
+}
+
+.section-divider {
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    position: relative;
+}
+
+.section-divider::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -1px;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(59, 130, 246, 0.6),
+        transparent
+    );
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* Type accents */
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(147, 197, 253, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    font-size: 0.7rem;
+}
+
+.title-underline {
+    width: 72px;
+    height: 1px;
+    margin-top: 1.25rem;
+    background: linear-gradient(90deg, rgba(59, 130, 246, 0.8), transparent);
+    opacity: 0.8;
+}
+
+/* Cards / pills */
+.glass-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+.pill {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* Button polish */
+.btn-primary {
+    background: white;
+    color: black;
+    box-shadow:
+        0 10px 40px rgba(59, 130, 246, 0.18),
+        inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+.btn-primary:hover {
+    background: #f2f2f2;
+}
+
+.btn-secondary {
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: white;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.06);
 }

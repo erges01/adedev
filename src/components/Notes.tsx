@@ -10,26 +10,26 @@ const notes = [
     date: "06.2026",
     title: "How I designed Redner's Timeline engine",
     category: "Architecture",
-    slug: "redner-timeline-engine"
+    slug: "redner-timeline-engine",
   },
   {
     date: "05.2026",
     title: "AI-assisted development is not 'vibe coding'",
     category: "Workflow",
-    slug: "ai-assisted-development"
+    slug: "ai-assisted-development",
   },
   {
     date: "05.2026",
     title: "Lessons from building a financial ledger in Rust",
     category: "Backend",
-    slug: "rust-ledger-lessons"
+    slug: "rust-ledger-lessons",
   },
   {
     date: "04.2026",
     title: "Things I got wrong building GirdORM",
     category: "Post-mortem",
-    slug: "girdorm-mistakes"
-  }
+    slug: "girdorm-mistakes",
+  },
 ];
 
 export default function Notes() {
@@ -43,17 +43,19 @@ export default function Notes() {
         className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6"
       >
         <div>
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-4">
-            Notes.
+          <span className="eyebrow font-mono mb-4">07 / Writing</span>
+          <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-2">
+            Writing
           </h2>
+          <div className="title-underline" />
           <p className="text-xl text-gray-400">
-            Raw thoughts on engineering, design, and architecture.
+            Short essays on engineering, design, and architecture.
           </p>
         </div>
-        
-        <button className="text-white hover:text-blue-400 transition-colors font-medium flex items-center gap-2">
+
+        <button className="text-blue-400/90 hover:text-blue-300 transition-colors font-mono uppercase tracking-widest text-xs flex items-center gap-2">
           View all notes
-          <ArrowUpRight className="w-5 h-5" />
+          <ArrowUpRight className="w-4 h-4" />
         </button>
       </motion.div>
 
@@ -67,8 +69,8 @@ export default function Notes() {
             transition={{ duration: 0.5, delay: index * 0.1 }}
           >
             {/* Replaced <a> with <Link> */}
-            <Link 
-              href={`/notes/${note.slug}`} 
+            <Link
+              href={`/notes/${note.slug}`}
               className="group flex flex-col md:flex-row md:items-center justify-between py-8 border-b border-white/10 hover:bg-white/[0.02] transition-colors -mx-6 px-6"
             >
               <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-12">
@@ -79,7 +81,7 @@ export default function Notes() {
                   {note.title}
                 </h3>
               </div>
-              
+
               <span className="hidden md:block text-blue-500/0 group-hover:text-blue-500 font-mono text-sm tracking-wider uppercase transition-colors">
                 {note.category}
               </span>

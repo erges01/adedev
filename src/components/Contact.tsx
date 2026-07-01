@@ -7,8 +7,11 @@ import { ArrowUpRight } from "lucide-react";
 const links = [
   { name: "Email", href: "mailto:adesopewinner@gmail.com" }, // Update with your email
   { name: "GitHub", href: "https://github.com/erges01" }, // Update with your GitHub
-  { name: "LinkedIn", href: "https://www.linkedin.com/in/winner-adesope-a28b70319/" }, // Update with your LinkedIn
-  { name: "X", href: "https://x.com/ade_sope01" } // Update with your X
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/in/winner-adesope-a28b70319/",
+  }, // Update with your LinkedIn
+  { name: "X", href: "https://x.com/ade_sope01" }, // Update with your X
 ];
 
 export default function Contact() {
@@ -21,9 +24,11 @@ export default function Contact() {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="flex flex-col items-start"
       >
-        <h2 className="text-5xl md:text-7xl font-bold tracking-tight text-white mb-16 max-w-3xl leading-tight">
-          Let's build something <span className="text-gray-500">ambitious.</span>
+        <span className="eyebrow font-mono mb-4">08 / Contact</span>
+        <h2 className="text-5xl md:text-7xl font-bold tracking-tight text-white mb-4 max-w-3xl leading-tight">
+          Let's build something <span className="text-gray-500">ambitious</span>
         </h2>
+        <div className="title-underline" />
 
         <div className="w-full flex flex-col md:flex-row gap-8 md:gap-16 pt-12 border-t border-white/10">
           {links.map((link) => (

@@ -2,8 +2,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link"; // <-- Added the Link import here
-import WhyIBuild from "@/components/WhyIBuild";
+import Link from "next/link";
+import { Download } from "lucide-react"; // <-- Added Download icon
+import About from "@/components/About";
+import Stack from "@/components/Stack";
+import Experience from "@/components/Experience";
 import SelectedProjects from "@/components/SelectedProjects";
 import Timeline from "@/components/Timeline";
 import Philosophy from "@/components/Philosophy";
@@ -15,13 +18,18 @@ export default function Home() {
     <main className="relative min-h-screen flex flex-col items-center overflow-hidden bg-[#0a0a0a]">
       {/* Background Noise Layer */}
       <div className="absolute inset-0 bg-noise z-0 fixed pointer-events-none" />
-      
+      <div className="absolute inset-0 bg-grid z-0 pointer-events-none" />
+
       {/* Hero Section */}
       <section className="relative min-h-screen w-full flex flex-col items-center justify-center">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/10 blur-[120px] rounded-full pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-blue-500/10 blur-[140px] rounded-full pointer-events-none" />
+        <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-blue-500/5 blur-[160px] rounded-full pointer-events-none" />
 
         <div className="z-10 flex flex-col items-start max-w-4xl w-full px-6">
-          <motion.h1 
+          <span className="eyebrow font-mono mb-6">
+          Software Engineer / Lagos
+          </span>
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
@@ -29,72 +37,112 @@ export default function Home() {
           >
             Adesope Winner
           </motion.h1>
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
             className="space-y-2 text-xl md:text-2xl text-gray-400 font-medium"
           >
             <p>Building software that feels inevitable.</p>
-            <p>Product Engineer.</p>
-            <p>Full-stack Developer.</p>
-            <p>Obsessed with creator tools.</p>
+            <p>Software Engineer.</p>
+            <p>Solving problems and building cool software.</p>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
-            className="mt-12 flex flex-wrap items-center gap-6"
+            className="mt-12 flex flex-wrap items-center gap-4 md:gap-6"
           >
-            {/* FIXED: Changed from <button> to <Link> and added hrefs */}
-            <Link 
+            <Link
               href="#work"
-              className="px-6 py-3 bg-white text-black font-semibold rounded-full hover:bg-gray-200 transition-colors cursor-pointer"
+              className="px-6 py-3 font-semibold rounded-full transition-colors cursor-pointer btn-primary"
             >
               See my work
             </Link>
-            <Link 
+            <Link
               href="#contact"
-              className="px-6 py-3 text-white border border-white/20 rounded-full hover:bg-white/5 transition-colors cursor-pointer"
+              className="px-6 py-3 rounded-full transition-colors cursor-pointer btn-secondary"
             >
               Let's build something
             </Link>
+
+            {/* The Resume Button */}
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3 flex items-center gap-2 text-gray-400 hover:text-white transition-colors cursor-pointer ml-2"
+            >
+              <Download className="w-4 h-4" />
+              <span className="font-medium">Resume</span>
+            </a>
           </motion.div>
         </div>
       </section>
 
-      {/* The Story & Stack */}
-      <div className="relative z-10 w-full">
-        <WhyIBuild />
+      {/* The About Section */}
+      <div className="relative w-full section-shell section-divider">
+        <div className="section-content">
+          <About />
+        </div>
+      </div>
+
+      {/* The Tech Stack */}
+      <div className="relative w-full section-shell section-shell-alt section-divider bg-[#050505]">
+        <div className="section-content">
+          <Stack />
+        </div>
+      </div>
+
+      {/* Experience Section */}
+      <div className="relative w-full section-shell section-divider">
+        <div className="section-content">
+          <Experience />
+        </div>
       </div>
 
       {/* Selected Projects */}
-      <div id="work" className="relative z-10 w-full border-t border-white/5">
-        <SelectedProjects />
+      <div
+        id="work"
+        className="relative w-full section-shell section-shell-alt section-divider bg-[#050505]"
+      >
+        <div className="section-content">
+          <SelectedProjects />
+        </div>
       </div>
 
       {/* The Timeline */}
-      <div className="relative z-10 w-full border-t border-white/5 bg-[#050505]">
-        <Timeline />
+      <div className="relative w-full section-shell section-divider">
+        <div className="section-content">
+          <Timeline />
+        </div>
       </div>
 
       {/* The Philosophy */}
-      <div className="relative z-10 w-full border-t border-white/5">
-        <Philosophy />
+      <div className="relative w-full section-shell section-shell-alt section-divider bg-[#050505]">
+        <div className="section-content">
+          <Philosophy />
+        </div>
       </div>
 
       {/* The Notes */}
-      <div className="relative z-10 w-full border-t border-white/5 bg-[#050505]">
-        <Notes />
+      <div className="relative w-full section-shell section-divider">
+        <div className="section-content">
+          <Notes />
+        </div>
       </div>
 
       {/* The Contact Footer */}
-      <div id="contact" className="relative z-10 w-full border-t border-white/5">
-        <Contact />
+      <div
+        id="contact"
+        className="relative w-full section-shell section-shell-alt section-divider bg-[#050505]"
+      >
+        <div className="section-content">
+          <Contact />
+        </div>
       </div>
-
     </main>
   );
 }

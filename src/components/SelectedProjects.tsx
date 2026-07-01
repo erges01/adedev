@@ -2,35 +2,38 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight, Code, ExternalLink } from "lucide-react"; // <-- Swapped Github for Code
+import { ArrowUpRight, Code, ExternalLink } from "lucide-react";
 import Link from "next/link";
 
 const projects = [
   {
     title: "Redner",
     category: "Creator Tools",
-    description: "Video creation should feel like writing. A web-first video editing system featuring a custom timeline playback and stage preview engine.",
+    description:
+      "Video creation should feel like writing. A web-first video editing system featuring a custom timeline playback and stage preview engine.",
     tech: ["React", "Rust", "WebAudio API"],
-    link: "/redner", 
-    github: "https://github.com/yourusername/redner", 
-    live: "https://redner.app" 
+    link: "/redner",
+    github: "https://github.com/erges01/redner",
+    live: "https://redner.app",
   },
   {
     title: "GirdORM",
     category: "Infrastructure",
-    description: "A lightweight, type-safe TypeScript Object-Relational Mapper (ORM) built from scratch for SQLite, designed as a fast alternative to Prisma.",
+    description:
+      "A lightweight, type-safe TypeScript Object-Relational Mapper (ORM) built from scratch for SQLite, designed as a fast alternative to Prisma.",
     tech: ["TypeScript", "SQLite", "AST Parsing"],
     link: "#girdorm-case-study",
-    github: "https://github.com/yourusername/girdorm",
+    github: "https://github.com/erges01/girdorm",
   },
   {
     title: "GirdLedger",
     category: "Infrastructure / Fintech",
-    description: "A high-performance financial ledger engine built in Rust to handle complex transaction types and deterministic account state logic.",
+    description:
+      "A high-performance financial ledger engine built in Rust to handle complex transaction types and deterministic account state logic.",
     tech: ["Rust", "Axum", "Postgres"],
     link: "#girdledger-case-study",
-    github: "https://github.com/yourusername/girdledger",
-  }
+    github: "https://github.com/erges01/girdledger",
+  },
 ];
 
 export default function SelectedProjects() {
@@ -43,11 +46,13 @@ export default function SelectedProjects() {
         transition={{ duration: 0.6 }}
         className="mb-16"
       >
-        <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-6">
-          The Product Lab.
+        <span className="eyebrow font-mono mb-4">04 / Work</span>
+        <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-2">
+          Product Lab
         </h2>
+        <div className="title-underline" />
         <p className="text-xl text-gray-400">
-          Selected explorations in creator tools and backend infrastructure.
+          Selected explorations across creator tools and backend infrastructure.
         </p>
       </motion.div>
 
@@ -59,11 +64,11 @@ export default function SelectedProjects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, delay: index * 0.1, ease: "easeOut" }}
-            className="group relative flex flex-col items-start"
+            className="group relative flex flex-col items-start rounded-2xl px-6 py-8 -mx-6 transition-colors hover:bg-white/[0.02]"
           >
             {/* Minimalist divider */}
             <div className="w-full h-px bg-white/10 mb-8 group-hover:bg-blue-500/50 transition-colors duration-500" />
-            
+
             <div className="w-full flex flex-col md:flex-row md:items-start justify-between gap-6">
               <div className="md:w-2/3">
                 <span className="text-blue-400 font-mono text-sm tracking-wider uppercase mb-4 block">
@@ -75,12 +80,12 @@ export default function SelectedProjects() {
                 <p className="text-lg md:text-xl text-gray-400 leading-relaxed mb-8">
                   {project.description}
                 </p>
-                
+
                 <div className="flex flex-wrap gap-3">
                   {project.tech.map((tech) => (
-                    <span 
-                      key={tech} 
-                      className="px-3 py-1 rounded-full border border-white/10 text-sm text-gray-300"
+                    <span
+                      key={tech}
+                      className="px-3 py-1 rounded-full pill text-sm text-gray-300"
                     >
                       {tech}
                     </span>
@@ -90,10 +95,9 @@ export default function SelectedProjects() {
 
               {/* Action Buttons Section */}
               <div className="md:w-1/3 flex flex-col items-start md:items-end mt-6 md:mt-0 gap-6">
-                
                 {/* Main Action: Read Case Study */}
-                <Link 
-                  href={project.link} 
+                <Link
+                  href={project.link}
                   className="flex items-center gap-2 text-white hover:text-blue-400 transition-colors font-medium text-lg"
                 >
                   Read Case Study
@@ -103,21 +107,21 @@ export default function SelectedProjects() {
                 {/* Secondary Actions: Code & Live Site */}
                 <div className="flex items-center gap-4 text-gray-400">
                   {project.github && (
-                    <a 
-                      href={project.github} 
-                      target="_blank" 
+                    <a
+                      href={project.github}
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-2 hover:text-white transition-colors text-sm font-medium"
                     >
-                      <Code className="w-4 h-4" /> {/* Swapped icon here */}
+                      <Code className="w-4 h-4" />
                       Source
                     </a>
                   )}
-                  
+
                   {project.live && (
-                    <a 
-                      href={project.live} 
-                      target="_blank" 
+                    <a
+                      href={project.live}
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-2 hover:text-white transition-colors text-sm font-medium"
                     >
@@ -126,12 +130,30 @@ export default function SelectedProjects() {
                     </a>
                   )}
                 </div>
-
               </div>
             </div>
           </motion.div>
         ))}
       </div>
+
+      {/* View All GitHub Projects Button */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.6 }}
+        className="mt-20 flex justify-center md:justify-start"
+      >
+        <a
+          href="https://github.com/erges01"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group flex items-center gap-3 px-6 py-3 bg-white/5 border border-white/10 rounded-full text-white hover:bg-white/10 hover:border-white/20 transition-all font-medium"
+        >
+          View remaining projects on GitHub
+          <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+        </a>
+      </motion.div>
     </section>
   );
 }
