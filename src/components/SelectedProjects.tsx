@@ -47,12 +47,12 @@ export default function SelectedProjects() {
         className="mb-16"
       >
         <span className="eyebrow font-mono mb-4">04 / Work</span>
-        <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-2">
-          Product Lab
+        <h2 className="text-4xl md:text-6xl font-black tracking-normal text-[#f8f4df] mb-2">
+          Quest Board
         </h2>
         <div className="title-underline" />
-        <p className="text-xl text-gray-400">
-          Selected explorations across creator tools and backend infrastructure.
+        <p className="text-xl text-[#c9d0d8]">
+          Selected builds across creator tools, infrastructure, and systems work.
         </p>
       </motion.div>
 
@@ -64,20 +64,19 @@ export default function SelectedProjects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, delay: index * 0.1, ease: "easeOut" }}
-            className="group relative flex flex-col items-start rounded-2xl px-6 py-8 -mx-6 transition-colors hover:bg-white/[0.02]"
+            className="group relative flex flex-col items-start pixel-card px-6 py-8 transition-transform hover:-translate-y-1"
           >
-            {/* Minimalist divider */}
-            <div className="w-full h-px bg-white/10 mb-8 group-hover:bg-blue-500/50 transition-colors duration-500" />
+            <div className="w-full h-2 bg-[#f8f4df]/10 mb-8 group-hover:bg-[#68e1fd]/45 transition-colors duration-500" />
 
             <div className="w-full flex flex-col md:flex-row md:items-start justify-between gap-6">
               <div className="md:w-2/3">
-                <span className="text-blue-400 font-mono text-sm tracking-wider uppercase mb-4 block">
+                <span className="text-[#ffce5c] font-mono text-sm tracking-normal uppercase mb-4 block">
                   {project.category}
                 </span>
-                <h3 className="text-3xl md:text-5xl font-bold text-white mb-6 group-hover:text-blue-100 transition-colors">
+                <h3 className="text-3xl md:text-5xl font-black text-[#f8f4df] mb-6 group-hover:text-[#68e1fd] transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-lg md:text-xl text-gray-400 leading-relaxed mb-8">
+                <p className="text-lg md:text-xl text-[#c9d0d8] leading-relaxed mb-8">
                   {project.description}
                 </p>
 
@@ -85,7 +84,7 @@ export default function SelectedProjects() {
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 rounded-full pill text-sm text-gray-300"
+                      className="px-3 py-1 pill text-sm text-[#c9d0d8]"
                     >
                       {tech}
                     </span>
@@ -98,20 +97,20 @@ export default function SelectedProjects() {
                 {/* Main Action: Read Case Study */}
                 <Link
                   href={project.link}
-                  className="flex items-center gap-2 text-white hover:text-blue-400 transition-colors font-medium text-lg"
+                  className="flex items-center gap-2 text-[#f8f4df] hover:text-[#68e1fd] transition-colors font-semibold text-lg"
                 >
                   Read Case Study
                   <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                 </Link>
 
                 {/* Secondary Actions: Code & Live Site */}
-                <div className="flex items-center gap-4 text-gray-400">
+                <div className="flex items-center gap-4 text-[#c9d0d8]">
                   {project.github && (
                     <a
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 hover:text-white transition-colors text-sm font-medium"
+                      className="flex items-center gap-2 hover:text-[#f8f4df] transition-colors text-sm font-medium"
                     >
                       <Code className="w-4 h-4" />
                       Source
@@ -123,7 +122,7 @@ export default function SelectedProjects() {
                       href={project.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 hover:text-white transition-colors text-sm font-medium"
+                      className="flex items-center gap-2 hover:text-[#f8f4df] transition-colors text-sm font-medium"
                     >
                       <ExternalLink className="w-4 h-4" />
                       Visit
@@ -148,7 +147,7 @@ export default function SelectedProjects() {
           href="https://github.com/erges01"
           target="_blank"
           rel="noopener noreferrer"
-          className="group flex items-center gap-3 px-6 py-3 bg-white/5 border border-white/10 rounded-full text-white hover:bg-white/10 hover:border-white/20 transition-all font-medium"
+          className="group flex items-center gap-3 px-6 py-3 btn-secondary transition-all font-semibold"
         >
           View remaining projects on GitHub
           <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />

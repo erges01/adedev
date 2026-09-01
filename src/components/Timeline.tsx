@@ -53,13 +53,13 @@ export default function Timeline() {
         className="mb-16"
       >
         <span className="eyebrow font-mono mb-4">05 / Journey</span>
-        <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-2">
-          Journey
+        <h2 className="text-4xl md:text-6xl font-black tracking-normal text-[#f8f4df] mb-2">
+          Save File
         </h2>
         <div className="title-underline" />
       </motion.div>
 
-      <div className="relative border-l border-white/10 ml-3 md:ml-4 space-y-16">
+      <div className="relative border-l-2 border-[#f8f4df]/15 ml-3 md:ml-4 space-y-16">
         {timelineData.map((item, index) => (
           <motion.div
             key={item.year}
@@ -70,15 +70,15 @@ export default function Timeline() {
             className="relative pl-8 md:pl-12"
           >
             {/* The glowing dot on the timeline */}
-            <div className="absolute w-3 h-3 bg-[#0a0a0a] border-2 border-blue-500 rounded-full -left-[6.5px] top-2 shadow-[0_0_10px_rgba(59,130,246,0.5)]" />
+            <div className="absolute w-4 h-4 bg-[#11131f] border-2 border-[#ffce5c] -left-[9px] top-2 shadow-[4px_4px_0_#050712]" />
 
-            <span className="text-blue-400 font-mono text-sm tracking-wider uppercase mb-2 block">
+            <span className="text-[#68e1fd] font-mono text-sm tracking-normal uppercase mb-2 block">
               {item.year}
             </span>
-            <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">
+            <h3 className="text-2xl md:text-3xl font-black text-[#f8f4df] mb-3">
               {item.title}
             </h3>
-            <p className="text-lg text-gray-400 leading-relaxed max-w-2xl">
+            <p className="text-lg text-[#c9d0d8] leading-relaxed max-w-2xl">
               {item.description}
             </p>
           </motion.div>

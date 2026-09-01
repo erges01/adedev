@@ -51,7 +51,7 @@ export default function RednerCaseStudy() {
             </div>
             <div>
               <span className="block text-white/30 mb-2">Timeline</span>
-              2026 – Present
+              2026 - Present
             </div>
             <div>
               <span className="block text-white/30 mb-2">Category</span>
@@ -75,7 +75,7 @@ export default function RednerCaseStudy() {
             <h2 className="text-3xl font-bold text-white mb-6">The Problem</h2>
             <div className="space-y-6 text-xl text-gray-400 leading-relaxed max-w-3xl">
               <p>
-                Modern video editing is inherently broken for the average creator. The paradigm hasn't changed since the early days of Premiere Pro: complex multi-track timelines, detached asset bins, and a steep learning curve just to sync audio with visual states.
+                Modern video editing is inherently broken for the average creator. The paradigm hasn&apos;t changed since the early days of Premiere Pro: complex multi-track timelines, detached asset bins, and a steep learning curve just to sync audio with visual states.
               </p>
               <p>
                 I wanted to build a web-first system that abstracts the complexity of the timeline. If you can type out a document, you should be able to orchestrate a video. 
@@ -103,12 +103,12 @@ export default function RednerCaseStudy() {
                   Engineering Challenge: The WebAudio API
                 </h3>
                 <p className="text-lg">
-                  Syncing visual state changes with audio playback in a browser is notoriously difficult due to JavaScript's single-threaded nature. To solve this in Phases 2.3 and 2.4, I decoupled the audio playback layer from the React render cycle. By leveraging the WebAudio API clock as the absolute source of truth, the Stage Engine independently polls for state updates, ensuring frame-perfect synchronization without dropping frames during heavy UI renders.
+                  Syncing visual state changes with audio playback in a browser is notoriously difficult due to JavaScript&apos;s single-threaded nature. To solve this in Phases 2.3 and 2.4, I decoupled the audio playback layer from the React render cycle. By leveraging the WebAudio API clock as the absolute source of truth, the Stage Engine independently polls for state updates, ensuring frame-perfect synchronization without dropping frames during heavy UI renders.
                 </p>
               </div>
 
               <p>
-                The frontend architecture avoids traditional heavy DOM manipulation, leaning instead on optimized canvas rendering and strict separation between the "editor state" and the "player state."
+                The frontend architecture avoids traditional heavy DOM manipulation, leaning instead on optimized canvas rendering and strict separation between the &quot;editor state&quot; and the &quot;player state.&quot;
               </p>
             </div>
           </motion.div>
@@ -126,15 +126,15 @@ export default function RednerCaseStudy() {
             <ul className="space-y-6 text-xl text-gray-400 leading-relaxed max-w-3xl list-none">
               <li className="flex gap-4">
                 <span className="text-blue-500 font-mono text-lg">01</span>
-                <span><strong className="text-white font-medium">State is everything.</strong> Complex local state in a web app can't just rely on React Context. You need deterministic, immutable stores to handle fast-scrubbing on a timeline.</span>
+                <span><strong className="text-white font-medium">State is everything.</strong> Complex local state in a web app can&apos;t just rely on React Context. You need deterministic, immutable stores to handle fast-scrubbing on a timeline.</span>
               </li>
               <li className="flex gap-4">
                 <span className="text-blue-500 font-mono text-lg">02</span>
-                <span><strong className="text-white font-medium">Browser APIs are incredibly powerful.</strong> You don't always need WASM immediately. Maximizing the WebAudio API and RequestAnimationFrame can get you 90% of the way there.</span>
+                <span><strong className="text-white font-medium">Browser APIs are incredibly powerful.</strong> You don&apos;t always need WASM immediately. Maximizing the WebAudio API and RequestAnimationFrame can get you 90% of the way there.</span>
               </li>
               <li className="flex gap-4">
                 <span className="text-blue-500 font-mono text-lg">03</span>
-                <span><strong className="text-white font-medium">UX dictates architecture.</strong> The decision to make video editing feel like "writing" meant throwing away traditional data models for tracks and clips, and engineering a completely new schema.</span>
+                <span><strong className="text-white font-medium">UX dictates architecture.</strong> The decision to make video editing feel like &quot;writing&quot; meant throwing away traditional data models for tracks and clips, and engineering a completely new schema.</span>
               </li>
             </ul>
           </motion.div>

@@ -33,12 +33,12 @@ export default function Stack() {
         className="mb-16"
       >
         <span className="eyebrow font-mono mb-4">02 / Stack</span>
-        <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-2">
-          Stack
+        <h2 className="text-3xl md:text-4xl font-black tracking-normal text-[#f8f4df] mb-2">
+          Inventory
         </h2>
         <div className="title-underline" />
-        <p className="text-lg text-gray-400">
-          The tools I use to design, ship, and scale products.
+        <p className="text-lg text-[#c9d0d8]">
+          The tools I reach for when systems need to stay fast, clear, and calm.
         </p>
       </motion.div>
 
@@ -50,16 +50,16 @@ export default function Stack() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="border-t border-white/10 pt-6"
+            className="pixel-card pt-10 p-6"
           >
-            <h3 className="text-white font-medium tracking-wide mb-6 uppercase text-sm font-mono">
+            <h3 className="text-[#ffce5c] font-bold tracking-normal mb-6 uppercase text-sm font-mono">
               {category.title}
             </h3>
             <div className="flex flex-wrap gap-3">
               {category.skills.map((skill) => (
                 <span
                   key={skill}
-                  className="px-4 py-2 rounded-full pill hover:bg-white/[0.05] transition-colors text-sm text-gray-300 font-medium"
+                  className="px-4 py-2 pill hover:bg-[#f8f4df]/8 transition-colors text-sm text-[#c9d0d8] font-medium"
                 >
                   {skill}
                 </span>

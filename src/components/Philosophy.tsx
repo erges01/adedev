@@ -14,23 +14,23 @@ const nowItems = [
   },
   {
     label: "Open to",
-    value: "High‑leverage collaborations and product engineering roles.",
+    value: "High-leverage collaborations and product engineering roles.",
   },
 ];
 
 export default function Philosophy() {
   return (
-    <section className="w-full max-w-4xl mx-auto px-6 py-32 md:py-48">
+    <section className="w-full max-w-4xl mx-auto px-6 py-32 md:py-44">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.6 }}
-        className="mb-24"
+        className="mb-20"
       >
         <span className="eyebrow font-mono mb-4">06 / Now</span>
-        <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-white">
-          Now
+        <h2 className="text-4xl md:text-6xl font-black tracking-normal text-[#f8f4df]">
+          Current Run
         </h2>
         <div className="title-underline" />
       </motion.div>
@@ -43,12 +43,12 @@ export default function Philosophy() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, delay: index * 0.1, ease: "easeOut" }}
-            className="glass-card rounded-2xl p-6 md:p-8"
+            className="pixel-card p-6 pt-10 md:p-8 md:pt-12"
           >
-            <span className="text-blue-400 font-mono text-xs tracking-widest uppercase">
+            <span className="text-[#ffce5c] font-mono text-xs uppercase">
               {item.label}
             </span>
-            <p className="mt-4 text-xl text-gray-300 leading-relaxed">
+            <p className="mt-4 text-xl text-[#c9d0d8] leading-relaxed">
               {item.value}
             </p>
           </motion.div>

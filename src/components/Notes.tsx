@@ -3,7 +3,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import Link from "next/link"; // <-- Import Link
+import Link from "next/link";
 
 const notes = [
   {
@@ -44,22 +44,22 @@ export default function Notes() {
       >
         <div>
           <span className="eyebrow font-mono mb-4">07 / Writing</span>
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-2">
-            Writing
+          <h2 className="text-4xl md:text-6xl font-black tracking-normal text-[#f8f4df] mb-2">
+            Dev Notes
           </h2>
           <div className="title-underline" />
-          <p className="text-xl text-gray-400">
+          <p className="text-xl text-[#c9d0d8]">
             Short essays on engineering, design, and architecture.
           </p>
         </div>
 
-        <button className="text-blue-400/90 hover:text-blue-300 transition-colors font-mono uppercase tracking-widest text-xs flex items-center gap-2">
+        <button className="btn-secondary flex items-center gap-2 px-4 py-3 font-mono text-xs uppercase transition-all">
           View all notes
           <ArrowUpRight className="w-4 h-4" />
         </button>
       </motion.div>
 
-      <div className="flex flex-col border-t border-white/10">
+      <div className="flex flex-col border-t-2 border-[#f8f4df]/12">
         {notes.map((note, index) => (
           <motion.div
             key={note.slug}
@@ -68,21 +68,20 @@ export default function Notes() {
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
           >
-            {/* Replaced <a> with <Link> */}
             <Link
               href={`/notes/${note.slug}`}
-              className="group flex flex-col md:flex-row md:items-center justify-between py-8 border-b border-white/10 hover:bg-white/[0.02] transition-colors -mx-6 px-6"
+              className="group flex flex-col md:flex-row md:items-center justify-between py-8 border-b-2 border-[#f8f4df]/12 hover:bg-[#f8f4df]/4 transition-colors -mx-6 px-6"
             >
               <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-12">
-                <span className="text-gray-500 font-mono text-sm tracking-widest w-24">
+                <span className="text-[#68e1fd] font-mono text-sm w-24">
                   {note.date}
                 </span>
-                <h3 className="text-xl md:text-2xl font-medium text-gray-300 group-hover:text-white transition-colors">
+                <h3 className="text-xl md:text-2xl font-semibold text-[#c9d0d8] group-hover:text-[#f8f4df] transition-colors">
                   {note.title}
                 </h3>
               </div>
 
-              <span className="hidden md:block text-blue-500/0 group-hover:text-blue-500 font-mono text-sm tracking-wider uppercase transition-colors">
+              <span className="hidden md:block text-[#ffce5c]/0 group-hover:text-[#ffce5c] font-mono text-sm uppercase transition-colors">
                 {note.category}
               </span>
             </Link>
